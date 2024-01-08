@@ -25,7 +25,7 @@ variable "attach_access_log_delivery_policy" {
 variable "attach_deny_insecure_transport_policy" {
   description = "Controls if S3 bucket should have deny non-SSL transport policy attached"
   type        = bool
-  default     = false
+  default     = true
 }
 
 variable "attach_require_latest_tls_policy" {
