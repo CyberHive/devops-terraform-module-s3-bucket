@@ -7,7 +7,7 @@ module "wrapper" {
   attach_elb_log_delivery_policy             = try(each.value.attach_elb_log_delivery_policy, var.defaults.attach_elb_log_delivery_policy, false)
   attach_lb_log_delivery_policy              = try(each.value.attach_lb_log_delivery_policy, var.defaults.attach_lb_log_delivery_policy, false)
   attach_access_log_delivery_policy          = try(each.value.attach_access_log_delivery_policy, var.defaults.attach_access_log_delivery_policy, false)
-  attach_deny_insecure_transport_policy      = try(each.value.attach_deny_insecure_transport_policy, var.defaults.attach_deny_insecure_transport_policy, false)
+  attach_deny_insecure_transport_policy      = try(each.value.attach_deny_insecure_transport_policy, var.defaults.attach_deny_insecure_transport_policy, true)
   attach_require_latest_tls_policy           = try(each.value.attach_require_latest_tls_policy, var.defaults.attach_require_latest_tls_policy, false)
   attach_policy                              = try(each.value.attach_policy, var.defaults.attach_policy, false)
   attach_public_policy                       = try(each.value.attach_public_policy, var.defaults.attach_public_policy, true)
