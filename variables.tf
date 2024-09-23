@@ -150,12 +150,12 @@ variable "versioning" {
 
 variable "logging" {
   description = "Map containing access bucket logging configuration."
-  type        = map(string)
+  type        = any
   default     = {}
 }
 
 variable "access_log_delivery_policy_source_buckets" {
-  description = "(Optional) List of S3 bucket ARNs wich should be allowed to deliver access logs to this bucket."
+  description = "(Optional) List of S3 bucket ARNs which should be allowed to deliver access logs to this bucket."
   type        = list(string)
   default     = []
 }
