@@ -2,6 +2,27 @@
 
 All notable changes to this project will be documented in this file.
 
+## [4.2.2](https://github.com/terraform-aws-modules/terraform-aws-s3-bucket/compare/v4.2.1...v4.2.2) (2024-11-08)
+
+
+### Bug Fixes
+
+* Remove ACL in analytics, inventory, and replication examples ([#292](https://github.com/terraform-aws-modules/terraform-aws-s3-bucket/issues/292)) ([1986daa](https://github.com/terraform-aws-modules/terraform-aws-s3-bucket/commit/1986daa5634d1fde23997ecd7de1660a9babd427))
+
+## [4.2.1](https://github.com/terraform-aws-modules/terraform-aws-s3-bucket/compare/v4.2.0...v4.2.1) (2024-10-11)
+
+
+### Bug Fixes
+
+* Update CI workflow versions to latest ([#293](https://github.com/terraform-aws-modules/terraform-aws-s3-bucket/issues/293)) ([522fcff](https://github.com/terraform-aws-modules/terraform-aws-s3-bucket/commit/522fcffdf90b1325501e021548962f41978aeefc))
+
+## [4.2.0](https://github.com/terraform-aws-modules/terraform-aws-s3-bucket/compare/v4.1.2...v4.2.0) (2024-10-06)
+
+
+### Features
+
+* Support `transition_default_minimum_object_size` ([#290](https://github.com/terraform-aws-modules/terraform-aws-s3-bucket/issues/290)) ([f6fda8c](https://github.com/terraform-aws-modules/terraform-aws-s3-bucket/commit/f6fda8c746d2b6951ae59d7a20d33dbaafe0d70f))
+
 ## [4.1.2](https://github.com/terraform-aws-modules/terraform-aws-s3-bucket/compare/v4.1.1...v4.1.2) (2024-04-16)
 
 
