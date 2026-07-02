@@ -25,7 +25,19 @@ output "s3_bucket_hosted_zone_id" {
 
 output "s3_bucket_lifecycle_configuration_rules" {
   description = "The lifecycle rules of the bucket, if the bucket is configured with lifecycle rules. If not, this will be an empty string."
-  value       = try(aws_s3_bucket_lifecycle_configuration.this[0].rule, "")
+  value = try(
+    [for rule in aws_s3_bucket_lifecycle_configuration.this[0].rule : {
+      id                                = rule.id
+      status                            = rule.status
+      abort_incomplete_multipart_upload = rule.abort_incomplete_multipart_upload
+      expiration                        = rule.expiration
+      filter                            = rule.filter
+      noncurrent_version_expiration     = rule.noncurrent_version_expiration
+      noncurrent_version_transition     = rule.noncurrent_version_transition
+      transition                        = rule.transition
+    }],
+    ""
+  )
 }
 
 output "s3_bucket_policy" {

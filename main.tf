@@ -304,13 +304,11 @@ resource "aws_s3_bucket_lifecycle_configuration" "this" {
       }
 
       # Max 1 block - filter - without any key arguments or tags
-      # dynamic "filter" {
-      #   for_each = length(try(flatten([rule.value.filter]), [])) == 0 ? [true] : []
+      dynamic "filter" {
+        for_each = length(try(flatten([rule.value.filter]), [])) == 0 ? [true] : []
 
-      #   content {
-      #     #          prefix = ""
-      #   }
-      # }
+        content {}
+      }
 
       # Max 1 block - filter - with one key argument or a single tag
       dynamic "filter" {
@@ -604,7 +602,7 @@ data "aws_iam_policy_document" "elb_log_delivery" {
 
   # Policy for AWS Regions created before August 2022 (e.g. US East (N. Virginia), Asia Pacific (Singapore), Asia Pacific (Sydney), Asia Pacific (Tokyo), Europe (Ireland))
   dynamic "statement" {
-    for_each = { for k, v in local.elb_service_accounts : k => v if k == data.aws_region.current.id }
+    for_each = { for k, v in local.elb_service_accounts : k => v if k == data.aws_region.current.region }
 
     content {
       sid = format("ELBRegion%s", title(statement.key))
